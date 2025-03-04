@@ -188,7 +188,13 @@ public class BookStoreDriver
         bookstore.printAllTitles(); //printing all books based on their title length
 
     }
-    }
+
+    //Lab7 start here
+    bookstore.printBooks(book -> book.getYearPublished() < 1950);
+
+
+
+}
 
 
 

@@ -9,8 +9,7 @@ import java.util.*;
  * following data: (a big table of Data)
  *
  * @author Ted
- * @author Liam
- * @author Lizzhan
+ * @author Nick
  * @version 1.0
 **/
 
@@ -485,6 +484,15 @@ public class BookStore <T extends Literature> {
         }
     }
 
+//Lab7 start here.
+
+    public void printBooks(BookFilter filter) {
+        for (Book book : books) {
+            if (filter.filter(book)) {
+                System.out.println(book);
+            }
+        }
+    }
 
 
 
