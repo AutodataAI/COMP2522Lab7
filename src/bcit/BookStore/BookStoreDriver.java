@@ -1,6 +1,8 @@
 package bcit.BookStore;
 
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /**
  * To drive the program.
@@ -197,6 +199,19 @@ public class BookStoreDriver
         //Lab7 start here
         bookstore.printBooks(book -> book.getYearPublished() < 1950);
 
+        //Lab 7 Step 4:
+        Predicate<Novel> oldBooks = book -> book.getYearPublished() < 1950;
+
+        System.out.println("\nOld Books:");
+        bookstore.printBooks(oldBooks::test);
+
+        Supplier<Novel> novelSupplier = (Novel::new);
+
+        Novel newNovel = novelSupplier.get();
+        System.out.println("\nNew Novel:");
+        System.out.println(newNovel.getTitle());
+        System.out.println(newNovel.getAuthorName());
+        System.out.println(newNovel.getYearPublished());
 
     }
 

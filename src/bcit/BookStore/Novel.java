@@ -37,6 +37,13 @@ public class Novel extends Literature implements Comparable<Novel>
         this.yearPublished = yearPublished;
     }
 
+    public Novel()
+    {
+        title = "Test title";
+        authorName = "Test Author";
+        yearPublished = 2000;
+    }
+
     /*
      * Validates the given title of the book on criteria:
      * 1. Cannot be null
