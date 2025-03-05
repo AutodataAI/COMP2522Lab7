@@ -11,6 +11,6 @@ package bcit.BookStore;
 @FunctionalInterface
 interface BookFilter
 {
-    boolean filter(Book book);
+    boolean filter(Novel book);
 }
 
