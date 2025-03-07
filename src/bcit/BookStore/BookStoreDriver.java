@@ -200,7 +200,7 @@ public class BookStoreDriver
         bookstore.printBooks(book -> book.getYearPublished() < 1950);
 
         //Lab 7 Step 4:
-        Predicate<Novel> oldBooks = book -> book.getYearPublished() < 1950;
+        Predicate<Novel> oldBooks = book -> book.getYearPublished() < 1940;
 
         System.out.println("\nOld Books:");
         bookstore.printBooks(oldBooks::test);
@@ -213,7 +213,21 @@ public class BookStoreDriver
         System.out.println(newNovel.getAuthorName());
         System.out.println(newNovel.getYearPublished());
 
+        System.out.println("📖 " + newNovel.getTitle());
+
+
+        BookStore.NovelStatistics stats = bookstore.new NovelStatistics();
+        double averageLength = stats.averageTitleLength();
+        System.out.println("Average title length: " + averageLength);
+
+        stats.sortByTitle();
+
+        System.out.println("\nAfter sorting:");
+        bookstore.printAllTitles();
+
     }
+
+
 
 
 

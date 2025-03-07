@@ -444,18 +444,18 @@ public class BookStore <T extends Literature> {
      */
     class NovelStatistics{
 
-//        /**
-//         * gets average title length of the outerclass.
-//         * @return average title length as double
-//         */
-//        public double averageTitleLength() {
-//            int totalLength;
-//            totalLength = 0;
-//            for (final T item : books) {
-//                totalLength += item.getTitle().length();
-//            }
-//            return (double) totalLength / books.size();
-//        }
+        /**
+         * gets average title length of the outerclass.
+         * @return average title length as double
+         */
+        public double averageTitleLength() {
+            int totalLength;
+            totalLength = 0;
+            for (final T item : books) {
+                totalLength += item.getTitle().length();
+            }
+            return (double) totalLength / books.size();
+        }
 
         /**
          * Implements a method reference based sorting method
@@ -509,7 +509,6 @@ public class BookStore <T extends Literature> {
 
 //Lab7 start here.
 
-
     public void printBooks(BookFilter filter) {
         for (T book : books) {
             if (filter.filter((Novel) book)) {
@@ -518,6 +517,9 @@ public class BookStore <T extends Literature> {
         }
     }
 
+    public void printBooks() {
+        books.forEach(book -> System.out.println("\uF4D6" + book.getTitle()));
+    }
 
 
 }
